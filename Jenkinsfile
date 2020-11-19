@@ -31,8 +31,9 @@ pipeline {
 //                       app.push("${env.BUILD_NUMBER}")
 //                       app.push("latest")
 //                   }
-                     withDockerRegistry([ credentialsId: "Docker-Hub-Cred", url: "https://index.docker.io/v1/" ]){            
-                             
+                     withDockerRegistry([ credentialsId: "docker_hub_login", url: "https://registry.hub.docker.com/" ]){            
+                         app.push("${env.BUILD_NUMBER}")
+                         app.push("latest")                             
                     }
                 
                 }
