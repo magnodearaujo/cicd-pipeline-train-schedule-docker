@@ -31,7 +31,7 @@ pipeline {
 //                       app.push("${env.BUILD_NUMBER}")
 //                       app.push("latest")
 //                   }
-                     withDockerRegistry([ credentialsId: "docker_hub_login", url: "https://registry.hub.docker.com/" ]){            
+                     withDockerRegistry([ credentialsId: "docker_hub_login", url: "" ]){            
                          app.push("${env.BUILD_NUMBER}")
                          app.push("latest")                             
                     }
