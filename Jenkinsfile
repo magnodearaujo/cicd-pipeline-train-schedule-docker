@@ -27,12 +27,11 @@ pipeline {
             }
             steps {
                 script {
-                    sh 'docker login -u magnoaraujo -p @berdeeN1801'
 //                    docker.withRegistry('https://registry.hub.docker.com/', 'docker_hub_login') {
 //                       app.push("${env.BUILD_NUMBER}")
 //                       app.push("latest")
 //                   }
-                     withDockerRegistry([ credentialsId: "docker_hub_login", url: "" ]){            
+                      withDockerRegistry([ credentialsId: "docker_hub_login", url: "" ]){            
                          app.push("${env.BUILD_NUMBER}")
                          app.push("latest")                             
                     }
